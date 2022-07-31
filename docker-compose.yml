@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    container_name: Larry-Pgepita
+    restart: always
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_USER: poxxxgres
+      POSTGRES_PASSWORD: lxxxxxx
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: larryadmin
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: lxxxxia@epita.fr
+      PGADMIN_DEFAULT_PASSWORD: xxxx22
