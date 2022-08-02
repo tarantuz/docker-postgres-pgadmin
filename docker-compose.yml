@@ -7,8 +7,10 @@ services:
     ports:
       - "54320:5432"
     environment:
-      POSTGRES_USER: poxxxgres
-      POSTGRES_PASSWORD: lxxxxxx
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: larry
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
     container_name: larryadmin
@@ -16,5 +18,12 @@ services:
     ports:
       - "8888:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: lxxxxia@epita.fr
-      PGADMIN_DEFAULT_PASSWORD: xxxx22
+      PGADMIN_DEFAULT_EMAIL: lawrence-kaara.mburia@epita.fr
+      PGADMIN_DEFAULT_PASSWORD: admin22
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
+
